@@ -1,59 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="site.js"></script>
-	<link rel="stylesheet" href="site.css">
-	
-    <title>Shaked Yitzhak - IT Intern</title>
-    
+    <title>שקד יצחק - Personal Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap');
+
+        :root {
+            --bg-dark: #0a0a0c;
+            --purple-deep: #1a0b2e;
+            --purple-light: #a855f7;
+            --neon-purple: #d8b4fe;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* אפקט הערימה - Stack Effect */
+        section {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            background-color: var(--bg-dark);
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+        }
+
+        .content-card {
+            background: rgba(26, 11, 46, 0.8);
+            border: 2px solid var(--purple-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .neon-text {
+            color: var(--neon-purple);
+            text-shadow: 0 0 10px rgba(216, 180, 254, 0.5);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .profile-img-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--purple-light);
+            background: linear-gradient(45deg, #1a0b2e, #a855f7);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+        }
+
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* פס התקדמות גלילה */
+        .scroll-indicator {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(168, 85, 247, 0.3);
+            border: 1px solid var(--purple-light);
+        }
+
+        @media (max-width: 768px) {
+            .grid-2x2 { grid-template-columns: 1fr; }
+            section { height: auto; min-height: 100vh; position: relative; }
+            .content-card { padding: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Shaked Yitzhak - NameLessProgg</h1>
-	
-	<p id="age">
-    <p> Location: Haifa District, Northern Israel</p>
-    
-<h2><strong>Education and Training</strong></h2>
-    <ul>
-        <li><strong>Information Cyber Security</strong>
-            <ul>
-                <li>Network: Configuring, Managing, Securing</li>
-                 <li>Security Implementing in Windows Organizational Environment</li>
-                 <li>Threat Analysis</li>
-            </ul>
-        </li>
-        <li><strong>Quality Assurance Manual & Automation (Implemented in Java, Selenium)</strong>
-            <ul>
-                <li>Skills: Test Planning, Test Automation, Selenium Webdriver</li>
-            </ul>
-        </li>
-        <li><strong>High School: Computer Science</strong>
-            <ul>
-                <li>Languages: C#, Assembly, Java for Android</li>
-                <li>Projects: Developed Android Applications, Implemented Algorithms</li>
-            </ul>
-        </li>
-    </ul>
 
-<h2>About Me</h2>
-    <p>
-        From a young age, my passion for technology ignited while immersing myself in the world of video games and exploring the intricacies of computers. This early fascination naturally led me to pursue a career in IT. As a lifelong gamer, I developed a strong understanding of computer systems, honed my problem-solving skills, and cultivated a keen interest in Software Development, Cybersecurity, Network Engineering.
-</p>
-	<p>
-		My early experiences included independently installing various operating systems, configuring a home network with three distinct endpoints, and troubleshooting hardware and software issues. This hands-on approach instilled in me a strong foundation in computer fundamentals and a desire to delve deeper into the field, particularly in the area of Cybersecurity, Network Security, Threat Intelligence, Ethical Hacking, Penetration Testing, Digital Forensics
-</p>
-    
-    <h2>Skills</h2>
-    <ul>
-        <li>Problem-solving</li>
-        <li>Intuitive Thinking</li>
-        <li>Outside-of-the-box approach</li>
-        <li>Hard Worker</li>
-        <li>Team Collaboration</li>
-    </ul>
-    <script src="https://tryhackme.com/badge/1508106"></script>
-	 
+    <!-- Scroll dots for navigation feel -->
+    <div class="scroll-indicator">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <!-- Section 1: Intro -->
+    <section style="z-index: 1;">
+        <div class="content-card text-center">
+            <div class="profile-img-placeholder">
+                <span>מקום לתמונה<br>(180x180)</span>
+            </div>
+            <h1 class="text-5xl font-bold mb-2 neon-text tracking-wider uppercase">שקד יצחק</h1>
+            <p class="text-xl text-purple-200 mb-6">Expert Technical Support | Cloud & IT Enthusiast</p>
+            <div class="flex justify-center gap-4 text-sm opacity-80">
+                <span>052-255-8284</span> | <span>aes899@gmail.com</span> | <span>קריות</span>
+            </div>
+            <div class="mt-10 animate-bounce opacity-50 text-sm">
+                גלול למטה כדי לגלות עוד
+                <br>▼
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Profile -->
+    <section style="z-index: 2;">
+        <div class="content-card">
+            <h2 class="text-3xl font-bold mb-6 neon-text text-center italic">PROFIL_אישי</h2>
+            <p class="text-lg leading-relaxed text-center text-purple-100">
+                לוחם, חובש פלוגתי, מאבטח, ומנהל משמרת – כל תפקיד עיצב את היכולת שלי להוביל תחת לחץ. 
+                כיום, כנציג טכני בכיר, אני משלב משמעת צבאית עם תשוקה עזה לפתרון תקלות מורכבות בעולמות ה-IT והענן.
+                <br><br>
+                <span class="text-purple-400 font-bold">"איך שאתה עושה כל דבר, זה איך שאתה עושה הכל"</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3: Technical Skills & Experience -->
+    <section style="z-index: 3;">
+        <div class="content-card">
+            <h2 class="text-3xl font-bold mb-6 neon-text text-center">EXPERIENCE_תעסוקה</h2>
+            <div class="space-y-6">
+                <div class="border-r-2 border-purple-500 pr-4">
+                    <h3 class="text-xl font-bold text-white">נציג בכיר בתמיכה טכנית | כלנית וואן</h3>
+                    <p class="text-sm text-purple-300 mb-2">2025 - היום</p>
+                    <p class="text-gray-300">אבחון תקלות עומק (ISP/תשתית), תמיכה בסגל ניהולי וניהול ממשקי ציוד קצה.</p>
+                </div>
+                <div class="border-r-2 border-purple-900 pr-4">
+                    <h3 class="text-xl font-bold text-white">מנהל משמרת | נוף-ים בטחון</h3>
+                    <p class="text-sm text-purple-300 mb-2">2022 - 2023</p>
+                    <p class="text-gray-300">ניהול צוות של 7 מאבטחים במתקן ציבורי הומה, ניהול משברים ותפעול שטח.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="skill-tag">AWS (EC2/S3)</span>
+                    <span class="skill-tag">Active Directory</span>
+                    <span class="skill-tag">Networking (TCP/IP)</span>
+                    <span class="skill-tag">Troubleshooting</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Education 2x2 -->
+    <section style="z-index: 4;">
+        <div class="content-card">
+            <h2 class="text-3xl font-bold mb-8 neon-text text-center">EDUCATION_השכלה</h2>
+            <div class="grid-2x2">
+                <div class="bg-black/40 p-4 rounded-xl border border-purple-900/50">
+                    <h4 class="text-purple-400 font-bold mb-1">AWS Cloud</h4>
+                    <p class="text-sm">ניהול רשתות ענן והסמכת AWS (2025)</p>
+                </div>
+                <div class="bg-black/40 p-4 rounded-xl border border-purple-900/50">
+                    <h4 class="text-purple-400 font-bold mb-1">Cyber Security</h4>
+                    <p class="text-sm">קורס מקיף בסייבר ואבטחת מידע</p>
+                </div>
+                <div class="bg-black/40 p-4 rounded-xl border border-purple-900/50">
+                    <h4 class="text-purple-400 font-bold mb-1">Software Eng.</h4>
+                    <p class="text-sm">תיכון אורט ביאליק - בגרות מלאה</p>
+                </div>
+                <div class="bg-black/40 p-4 rounded-xl border border-purple-900/50">
+                    <h4 class="text-purple-400 font-bold mb-1">Medical</h4>
+                    <p class="text-sm">הסמכת חובש מוסמך (צה"ל)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Military Window -->
+    <section style="z-index: 5;">
+        <div class="content-card">
+            <h2 class="text-3xl font-bold mb-6 neon-text text-center">MILITARY_שירות</h2>
+            <div class="military-window bg-black/60 p-6 rounded-2xl border-2 border-dashed border-purple-500">
+                <h3 class="text-xl font-bold text-white mb-2">לוחם איסוף קרבי וחובש פלוגתי</h3>
+                <p class="text-sm text-purple-200 mb-4 tracking-wide opacity-80">2018 - 2021 | סמל צוות מרפאה</p>
+                <p class="text-gray-300 leading-relaxed">
+                    ניהול רפואי ולוגיסטי עבור למעלה מ-100 חיילים. עבודה בממשק מול דרגים בכירים, אחריות על כשירות מבצעית וקבלת החלטות מהירות במצבי קצה.
+                </p>
+                <div class="mt-6 flex justify-between items-center opacity-50 text-[10px]">
+                    <span>READY FOR DUTY</span>
+                    <span>SYSTEM_ACTIVE</span>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-xs text-purple-400 border border-purple-400 px-4 py-1 rounded hover:bg-purple-400 hover:text-black transition">חזרה למעלה</button>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
